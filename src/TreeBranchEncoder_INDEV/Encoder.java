@@ -1,6 +1,5 @@
 package TreeBranchEncoder_INDEV;
 
-import java.util.Arrays;
 
 public class Encoder {
     static int size = 0;
@@ -19,10 +18,12 @@ public class Encoder {
         len = (s - 1);
         size = n;
         n = 0;
-        while (text.length() < len){
-            text+=text.charAt(n);
+        StringBuilder textBuilder = new StringBuilder(text);
+        while (textBuilder.length() < len){
+            textBuilder.append(textBuilder.charAt(n));
             n++;
         }
+        text = textBuilder.toString();
         return text;
     }
     /**
@@ -58,7 +59,7 @@ public class Encoder {
     }
 
 
-    public static void Looper(){}
+    //public static void Looper(){}
 
 
     public static void main(String[] args) {
