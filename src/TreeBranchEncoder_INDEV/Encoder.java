@@ -65,10 +65,25 @@ public class Encoder {
         char[] text = Substitution("This is a test sentence, to proof a point 0123456789ABCDEFGHI11");
         //text = Substitution(unHex(text));
         System.out.println(text);
-        System.out.println(unHex(text));
         int[] arr = Indexation.TreeArray(size);
+        StringBuilder res = new StringBuilder();
         for (int n = 0; n < text.length-1; n+=2){
-            System.out.print((char) Integer.parseInt((text[arr[n]]+""+text[arr[n+1]]),16));
+            res.append((char) Integer.parseInt((text[arr[n]]+""+text[arr[n+1]]),16));
         }
+        System.out.println(res);
+        text = Substitution(String.valueOf(res));
+        res = new StringBuilder();
+        for (int n = 0; n < text.length-1; n+=2){
+            res.append((char) Integer.parseInt((text[arr[n]]+""+text[arr[n+1]]),16));
+        }
+        System.out.println(res);
+
+        System.out.println(res);
+        text = Substitution(String.valueOf(res));
+        res = new StringBuilder();
+        for (int n = 0; n < text.length-1; n+=2){
+            res.append((char) Integer.parseInt((text[arr[n]]+""+text[arr[n+1]]),16));
+        }
+        System.out.println(res);
     }
 }
